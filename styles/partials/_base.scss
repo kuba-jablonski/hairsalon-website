@@ -9,8 +9,6 @@
 html,
 body {
   overflow-x: hidden;
-  background-color: red;
-  color: red;
 }
 
 html {
@@ -25,16 +23,17 @@ body {
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 3rem;
   max-width: 114rem;
+  height: 100%;
 
   // @include respond(xs) {
   //   padding: 0 2rem;
   // }
-}
-
-.p {
-  margin-bottom: 0.5rem;
 }
