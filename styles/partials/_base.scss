@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  background-color: red;
+  color: red;
+}
+
+html {
+  font-size: 62.5%;
+
+  // @include respond(tablet) {
+  //   font-size: 56.25%;
+  // }
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 3rem;
+  max-width: 114rem;
+
+  // @include respond(xs) {
+  //   padding: 0 2rem;
+  // }
+}
+
+.p {
+  margin-bottom: 0.5rem;
+}
