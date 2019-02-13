@@ -30,14 +30,52 @@
             src="~/assets/images/15.jpg"
             alt=""
           >
-          <div>
+          <div class="about__details">
             <h3>Beautiful Hair Comes From A Legendary.</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam molestias, magni, saepe ducimus doloribus animi corporis illo, corrupti reprehenderit modi natus. Nisi, sequi eos dolorem consectetur error vero? Aspernatur.</p>
-            <base-button>Read More</base-button>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam molestias, magni, saepe ducimus doloribus animi corporis illo, corrupti reprehenderit modi natus.</p>
+            <base-button
+              primary
+              class="about__btn"
+            >
+              Read More
+            </base-button>
           </div>
         </section>
         <section>
-          Hello
+          <h2>Our Services</h2>
+          <p>The House of Hair Salon & Spa, incididunt ut labore et dolore magna aliqua.</p>
+          <div class="card">
+            <img
+              src="~/assets/images/s1.png"
+              alt=""
+            >
+            <h4>Coloring</h4>
+            <p>Ut enim ad minim veniam, quis trud exercitation...</p>
+          </div>
+          <div class="card">
+            <img
+              src="~/assets/images/s3.png"
+              alt=""
+            >
+            <h4>Haircut</h4>
+            <p>Consectetur adipisicing elit, sed doe eiusmod.</p>
+          </div>
+          <div class="card">
+            <img
+              src="~/assets/images/s4.png"
+              alt=""
+            >
+            <h4>Hairstyle</h4>
+            <p>Nemo enim ipsam voluptatem quia voluptas</p>
+          </div>
+          <div class="card">
+            <img
+              src="~/assets/images/s3.png"
+              alt=""
+            >
+            <h4>Coloring</h4>
+            <p>Ut enim ad minim veniam, quis trud exercitation...</p>
+          </div>
         </section>
       </div>
     </main>
@@ -104,7 +142,16 @@
 
   &__img {
     display: block;
-    height: 30rem;
+    width: 35rem;
+    box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+  }
+
+  &__details {
+    margin-left: 2.5rem;
+  }
+
+  &__btn {
+    margin-top: 4rem;
   }
 }
 </style>
