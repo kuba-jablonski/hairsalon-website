@@ -3,38 +3,44 @@
     <div class="container">
       <header class="header">
         <div class="header__textbox">
-          <h1>We care about your hair</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure itaque quasi esse autem rerum necessitatibus doloremque at deserunt voluptate commodi cumque numquam, delectus tenetur similique. Excepturi id explicabo quod blanditiis.</p>
-          <base-button>About Us</base-button>
+          <h1 class="header__heading">
+            We care about your hair
+          </h1>
+          <p class="header__text">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure itaque quasi esse autem rerum necessitatibus doloremque at deserunt voluptate commodi cumque numquam, delectus tenetur similique.
+          </p>
+          <base-button primary>
+            About Us
+          </base-button>
         </div>
       </header>
-      <main>
-        <div class="container">
-          <section class="about">
-            <span class="about__bgtext">
-              about<br>us
-            </span>
-            <div class="about__titlebox">
-              <h2>Hair Salon</h2>
-              <p>The House of Hair Salon & Spa</p>
-            </div>
-            <img
-              class="about__img"
-              src="~/assets/images/15.jpg"
-              alt=""
-            >
-            <div>
-              <h3>Beautiful Hair Comes From A Legendary.</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam molestias, magni, saepe ducimus doloribus animi corporis illo, corrupti reprehenderit modi natus. Nisi, sequi eos dolorem consectetur error vero? Aspernatur.</p>
-              <base-button>Read More</base-button>
-            </div>
-          </section>
-          <section>
-            Hello
-          </section>
-        </div>
-      </main>
     </div>
+    <main>
+      <div class="container">
+        <section class="about">
+          <span class="about__bgtext">
+            about<br>us
+          </span>
+          <div class="about__titlebox">
+            <h2>Hair Salon</h2>
+            <p>The House of Hair Salon & Spa</p>
+          </div>
+          <img
+            class="about__img"
+            src="~/assets/images/15.jpg"
+            alt=""
+          >
+          <div>
+            <h3>Beautiful Hair Comes From A Legendary.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam molestias, magni, saepe ducimus doloribus animi corporis illo, corrupti reprehenderit modi natus. Nisi, sequi eos dolorem consectetur error vero? Aspernatur.</p>
+            <base-button>Read More</base-button>
+          </div>
+        </section>
+        <section>
+          Hello
+        </section>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -51,6 +57,20 @@
   display: flex;
   align-items: center;
 
+  &__heading {
+    font-size: 7.2rem;
+    line-height: 1.2;
+    text-transform: capitalize;
+    margin-bottom: 4rem;
+    font-weight: 300;
+  }
+
+  &__text {
+    margin-bottom: 4rem;
+    font-size: 1.8rem;
+    line-height: 1.7;
+  }
+
   &__textbox {
     width: 50rem;
   }
@@ -65,10 +85,12 @@
   border-bottom: 1px solid #e6e6e6;
 
   &__bgtext {
-    font-size: 8rem;
+    font-family: $font-display;
+    font-size: 10rem;
     text-transform: uppercase;
+    font-weight: bold;
     line-height: 1;
-    color: #f7f7f7;
+    color: rgba($color-primary, 0.1);
     grid-column: 1/1;
     grid-row: 1/1;
   }

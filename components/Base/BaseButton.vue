@@ -1,18 +1,38 @@
 <template>
   <button
-    class="btn"
+    :class="classes"
     v-on="$listeners"
   >
     <slot />
   </button>
 </template>
 
+<script>
+export default {
+  props: {
+    primary: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    classes() {
+      return {
+        btn: true,
+        'btn--primary': this.primary
+      }
+    }
+  }
+}
+</script>
+
+
 <style lang="scss" scoped>
 .btn {
   position: relative;
   font-family: $font-display;
   font-size: 1.5rem;
-  border: 1px solid black;
+  border: 1px solid $color-font-dark;
   border-radius: 50px;
   outline: none;
   background-color: transparent;
@@ -31,6 +51,17 @@
     border-color: $color-primary;
     background-color: $color-primary;
     color: #fff;
+  }
+
+  &--primary {
+    border-color: $color-primary;
+    background-color: $color-primary;
+    color: #fff;
+
+    &:hover {
+      border-color: $color-font-dark;
+      background-color: $color-font-dark;
+    }
   }
 }
 </style>
