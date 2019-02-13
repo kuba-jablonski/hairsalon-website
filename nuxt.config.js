@@ -13,7 +13,14 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display'
+      }
+    ]
   },
 
   /*
@@ -35,9 +42,9 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: ['@nuxtjs/style-resources'],
-  // styleResources: {
-  //   scss: ['@/styles/_base.scss']
-  // },
+  styleResources: {
+    scss: ['./styles/variables/*.scss']
+  },
 
   /*
   ** Build configuration

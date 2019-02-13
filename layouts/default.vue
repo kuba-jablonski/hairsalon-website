@@ -2,28 +2,48 @@
   <div>
     <div class="container">
       <nav class="nav">
-        <div class="nav__brand">
-          Akame
-        </div>
+        <img
+          class="nav__logo"
+          src="~/assets/images/logo.png"
+          alt="Akame"
+        >
         <ul class="nav__items">
-          <li class="nav__item">
+          <nuxt-link
+            to="/"
+            class="nav__item"
+          >
             Home
-          </li>
-          <li class="nav__item">
+          </nuxt-link>
+          <nuxt-link
+            to="/portfolio"
+            class="nav__item"
+          >
             Portfolio
-          </li>
-          <li class="nav__item">
+          </nuxt-link>
+          <nuxt-link
+            to="/services"
+            class="nav__item"
+          >
             Services
-          </li>
-          <li class="nav__item">
+          </nuxt-link>
+          <nuxt-link
+            to="/about"
+            class="nav__item"
+          >
             About Us
-          </li>
-          <li class="nav__item">
+          </nuxt-link>
+          <nuxt-link
+            to="/blog"
+            class="nav__item"
+          >
             Blog
-          </li>
-          <li class="nav__item">
+          </nuxt-link>
+          <nuxt-link
+            to="/contact"
+            class="nav__item"
+          >
             Contact
-          </li>
+          </nuxt-link>
         </ul>
         <base-button class="nav__cta">
           Book Now
@@ -41,7 +61,7 @@
   height: 10rem;
   align-items: center;
 
-  &__brand {
+  &__logo {
     margin-right: auto;
   }
 
@@ -52,5 +72,14 @@
   &__cta {
     margin-left: 5rem;
   }
+
+  &__item {
+    padding: 0.4rem 0.6rem;
+    margin: 0 1rem;
+  }
+}
+
+.nuxt-link-exact-active {
+  border-bottom: 2px solid $color-primary;
 }
 </style>
