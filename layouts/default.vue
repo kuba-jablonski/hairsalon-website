@@ -76,6 +76,11 @@
   &__item {
     padding: 0.4rem 0.6rem;
     margin: 0 1rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-primary;
+    }
   }
 }
 
