@@ -170,7 +170,7 @@ export default {
   background: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 8rem 0;
+  // padding: 8rem 0;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
 
@@ -210,7 +210,7 @@ export default {
 .services {
   text-align: center;
   background-color: #fff;
-  padding: 8rem 0;
+  // padding: 8rem 0;
 
   &__heading {
     margin-bottom: 5rem;
@@ -224,7 +224,7 @@ export default {
 }
 
 .whyus {
-  padding: 8rem 0;
+  // padding: 8rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 4rem;
