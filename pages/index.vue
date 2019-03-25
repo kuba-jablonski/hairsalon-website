@@ -1,19 +1,21 @@
 <template>
-  <div class="bg-image">
-    <div class="container">
-      <header class="header">
-        <div class="header__textbox">
-          <h1 class="header__heading">
-            We care about your hair
-          </h1>
-          <p class="header__text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure itaque quasi esse autem rerum necessitatibus doloremque at deserunt voluptate commodi cumque numquam, delectus tenetur similique.
-          </p>
-          <base-button primary>
-            About Us
-          </base-button>
-        </div>
-      </header>
+  <div>
+    <div class="bg-image">
+      <div class="container">
+        <header class="header">
+          <div class="header__textbox">
+            <h1 class="header__heading">
+              We care about your hair
+            </h1>
+            <p class="header__text">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure itaque quasi esse autem rerum necessitatibus doloremque at deserunt voluptate commodi cumque numquam, delectus tenetur similique.
+            </p>
+            <base-button primary>
+              About Us
+            </base-button>
+          </div>
+        </header>
+      </div>
     </div>
     <main>
       <div class="container">
@@ -118,6 +120,38 @@
             </div>
           </section>
         </div>
+      </div>
+      <div class="container">
+        <section class="work">
+          <div class="work__heading">
+            <h2>Our Work</h2>
+            <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="work__menu">
+            <button class="work__menu-item">
+              All
+            </button>
+            <button class="work__menu-item">
+              Haircuts
+            </button>
+            <button class="work__menu-item">
+              Dye
+            </button>
+            <button class="work__menu-item">
+              Shave
+            </button>
+            <button class="work__menu-item">
+              Hairstyle
+            </button>
+          </div>
+          <div>
+            <img src="~/assets/images/5.jpg">
+            <img src="~/assets/images/1.jpg">
+            <img src="~/assets/images/7.jpg">
+            <img src="~/assets/images/8.jpg">
+            <img src="~/assets/images/9.jpg">
+          </div>
+        </section>
       </div>
     </main>
   </div>
@@ -262,6 +296,14 @@ export default {
     fill: $color-primary;
     width: 2rem;
     height: 2rem;
+  }
+}
+
+.work {
+  background: white;
+
+  &__heading {
+    text-align: center;
   }
 }
 
