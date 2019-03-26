@@ -1,53 +1,55 @@
 <template>
-  <section class="work">
-    <div class="work__heading">
-      <h2>Our Work</h2>
-      <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="work__menu">
-      <button class="work__menu-item">
-        All
-      </button>
-      <button class="work__menu-item">
-        Haircuts
-      </button>
-      <button class="work__menu-item">
-        Dye
-      </button>
-      <button class="work__menu-item">
-        Shave
-      </button>
-      <button class="work__menu-item">
-        Hairstyle
-      </button>
-    </div>
-    <div class="image-grid">
-      <img
-        class="grid-item"
-        src="~/assets/images/5.jpg"
-      >
-      <img
-        class="grid-item grid-item-2"
-        src="~/assets/images/1.jpg"
-      >
-      <img
-        class="grid-item"
-        src="~/assets/images/7.jpg"
-      >
-      <img
-        class="grid-item"
-        src="~/assets/images/8.jpg"
-      >
-      <img
-        class="grid-item"
-        src="~/assets/images/9.jpg"
-      >
-      <!-- <div class="grid-item-1" />
+  <div class="container">
+    <section class="work">
+      <div class="work__heading">
+        <h2>Our Work</h2>
+        <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+      <div class="work__menu">
+        <button class="work__menu-item">
+          All
+        </button>
+        <button class="work__menu-item">
+          Haircuts
+        </button>
+        <button class="work__menu-item">
+          Dye
+        </button>
+        <button class="work__menu-item">
+          Shave
+        </button>
+        <button class="work__menu-item">
+          Hairstyle
+        </button>
+      </div>
+      <div class="image-grid">
+        <img
+          class="grid-item"
+          src="~/assets/images/5.jpg"
+        >
+        <img
+          class="grid-item grid-item-2"
+          src="~/assets/images/1.jpg"
+        >
+        <img
+          class="grid-item"
+          src="~/assets/images/7.jpg"
+        >
+        <img
+          class="grid-item"
+          src="~/assets/images/8.jpg"
+        >
+        <img
+          class="grid-item"
+          src="~/assets/images/9.jpg"
+        >
+        <!-- <div class="grid-item-1" />
             <div class="grid-item-2" />
             <div class="grid-item" />
             <div class="grid-item" /> -->
-    </div>
-  </section>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -1,28 +1,30 @@
 <template functional>
-  <section class="about">
-    <span class="about__bgtext">
-      about<br>us
-    </span>
-    <div class="about__titlebox">
-      <h2>Hair Salon</h2>
-      <p>The House of Hair Salon & Spa</p>
-    </div>
-    <img
-      class="about__img"
-      src="~/assets/images/15.jpg"
-      alt=""
-    >
-    <div class="about__details">
-      <h3>Beautiful Hair Comes From A Legendary.</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam molestias, magni, saepe ducimus doloribus animi corporis illo, corrupti reprehenderit modi natus.</p>
-      <base-button
-        primary
-        class="about__btn"
+  <div class="container">
+    <section class="about">
+      <span class="about__bgtext">
+        about<br>us
+      </span>
+      <div class="about__titlebox">
+        <h2>Hair Salon</h2>
+        <p>The House of Hair Salon & Spa</p>
+      </div>
+      <img
+        class="about__img"
+        src="~/assets/images/15.jpg"
+        alt=""
       >
-        Read More
-      </base-button>
-    </div>
-  </section>
+      <div class="about__details">
+        <h3>Beautiful Hair Comes From A Legendary.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam laboriosam molestias, magni, saepe ducimus doloribus animi corporis illo, corrupti reprehenderit modi natus.</p>
+        <base-button
+          primary
+          class="about__btn"
+        >
+          Read More
+        </base-button>
+      </div>
+    </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -30,7 +32,6 @@
   background: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  // padding: 8rem 0;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
 

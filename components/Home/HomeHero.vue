@@ -1,5 +1,5 @@
 <template functional>
-  <div class="bg-image">
+  <div class="header__background">
     <div class="container">
       <header class="header">
         <div class="header__textbox">
@@ -19,17 +19,17 @@
 </template>
 
 <style lang="scss" scoped>
-.bg-image {
-  height: calc(100vh - 10rem);
-  background-image: url('~assets/images/16.jpg');
-  background-position: center;
-  background-size: cover;
-}
-
 .header {
   height: 100%;
   display: flex;
   align-items: center;
+
+  &__background {
+    height: calc(100vh - 10rem);
+    background-image: url('~assets/images/16.jpg');
+    background-position: center;
+    background-size: cover;
+  }
 
   &__heading {
     font-size: 7.2rem;

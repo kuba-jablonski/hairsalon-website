@@ -6,7 +6,6 @@
           <img
             class="whyus__img"
             src="~/assets/images/4.jpg"
-            alt=""
           >
         </div>
         <div>
@@ -51,7 +50,6 @@ export default {
 
 <style lang="scss" scoped>
 .whyus {
-  // padding: 8rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 4rem;

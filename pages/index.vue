@@ -2,14 +2,10 @@
   <div>
     <home-hero />
     <main>
-      <div class="container">
-        <section-about />
-        <section-services />
-      </div>
+      <section-about />
+      <section-services />
       <section-whyus />
-      <div class="container">
-        <section-work />
-      </div>
+      <section-work />
     </main>
   </div>
 </template>
