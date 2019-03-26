@@ -144,12 +144,31 @@
               Hairstyle
             </button>
           </div>
-          <div>
-            <img src="~/assets/images/5.jpg">
-            <img src="~/assets/images/1.jpg">
-            <img src="~/assets/images/7.jpg">
-            <img src="~/assets/images/8.jpg">
-            <img src="~/assets/images/9.jpg">
+          <div class="image-grid">
+            <img
+              class="grid-item"
+              src="~/assets/images/5.jpg"
+            >
+            <img
+              class="grid-item grid-item-2"
+              src="~/assets/images/1.jpg"
+            >
+            <img
+              class="grid-item"
+              src="~/assets/images/7.jpg"
+            >
+            <img
+              class="grid-item"
+              src="~/assets/images/8.jpg"
+            >
+            <img
+              class="grid-item"
+              src="~/assets/images/9.jpg"
+            >
+            <!-- <div class="grid-item-1" />
+            <div class="grid-item-2" />
+            <div class="grid-item" />
+            <div class="grid-item" /> -->
           </div>
         </section>
       </div>
@@ -169,6 +188,34 @@ export default {
 
 
 <style lang="scss" scoped>
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 24rem);
+  grid-gap: 4rem;
+}
+
+.grid-item {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  // object-position: right bottom;
+}
+
+.grid-item-1 {
+  grid-column: span 1;
+  grid-row: span 1;
+  // height: 100%;
+  // width: 100%;
+  background-color: black;
+}
+
+.grid-item-2 {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: black;
+}
+
 .bg-image {
   height: calc(100vh - 10rem);
   background-image: url('~assets/images/16.jpg');
