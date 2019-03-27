@@ -27,6 +27,9 @@
           src="~/assets/images/9.jpg"
         >
       </div>
+      <div class="work__cta">
+        <base-button>View all work</base-button>
+      </div>
     </section>
   </div>
 </template>
@@ -37,6 +40,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 24rem);
   grid-gap: 4rem;
+  margin-bottom: 8rem;
 }
 
 .grid-item {
@@ -59,6 +63,11 @@
 
   &__heading {
     text-align: center;
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
   }
 }
 </style>
