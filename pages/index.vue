@@ -7,6 +7,7 @@
       <section-whyus />
       <section-work />
       <section-personnel />
+      <section-news />
     </main>
   </div>
 </template>
@@ -18,6 +19,7 @@ import SectionServices from '~/components/Home/SectionServices'
 import SectionWhyus from '~/components/Home/SectionWhyus'
 import SectionWork from '~/components/Home/SectionWork'
 import SectionPersonnel from '~/components/Home/SectionPersonnel'
+import SectionNews from '~/components/Home/SectionNews'
 
 export default {
   components: {
@@ -26,7 +28,8 @@ export default {
     SectionServices,
     SectionWhyus,
     SectionWork,
-    SectionPersonnel
+    SectionPersonnel,
+    SectionNews
   }
 }
 </script>
