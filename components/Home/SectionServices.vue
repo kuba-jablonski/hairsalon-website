@@ -44,6 +44,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
+
+    @include respond(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(xs) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
