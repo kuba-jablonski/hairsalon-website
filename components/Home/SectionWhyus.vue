@@ -54,6 +54,10 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-gap: 4rem;
 
+  @include respond(md) {
+    grid-template-columns: 1fr;
+  }
+
   &__wrapper {
     background-color: #f6f9f9;
   }
