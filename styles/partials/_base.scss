@@ -43,7 +43,7 @@ section {
   max-width: 114rem;
   height: 100%;
 
-  // @include respond(xs) {
-  //   padding: 0 2rem;
-  // }
+  @include respond(xs) {
+    padding: 0 2rem;
+  }
 }

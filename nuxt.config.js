@@ -43,7 +43,7 @@ module.exports = {
   */
   modules: ['@nuxtjs/style-resources', 'nuxt-svg'],
   styleResources: {
-    scss: ['./styles/variables/*.scss']
+    scss: ['./styles/variables/*.scss', './styles/abstracts/_mixins.scss']
   },
 
   /*

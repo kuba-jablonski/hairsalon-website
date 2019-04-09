@@ -4,7 +4,7 @@
       <header class="header">
         <div class="header__textbox">
           <h1 class="header__heading">
-            We care about your hair
+            We care about <br> your hair
           </h1>
           <p class="header__text">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure itaque quasi esse autem rerum necessitatibus doloremque at deserunt voluptate commodi cumque numquam, delectus tenetur similique.
@@ -37,6 +37,14 @@
     text-transform: capitalize;
     margin-bottom: 4rem;
     font-weight: 300;
+
+    @include respond(md) {
+      font-size: 6rem;
+    }
+
+    @include respond(xs) {
+      font-size: 3.6rem;
+    }
   }
 
   &__text {
