@@ -32,8 +32,18 @@
   background: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
+
+  @include respond(md) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4rem;
+  }
+
+  @include respond(sm) {
+    grid-template-columns: 100%;
+  }
 
   &__bgtext {
     font-family: $font-display;
@@ -44,6 +54,14 @@
     color: rgba($color-primary, 0.1);
     grid-column: 1/1;
     grid-row: 1/1;
+
+    @include respond(lg) {
+      font-size: 7rem;
+
+      br {
+        display: none;
+      }
+    }
   }
 
   &__titlebox {
@@ -57,10 +75,21 @@
     display: block;
     width: 35rem;
     box-shadow: 0 2px 40px 8px rgba(15, 15, 15, 0.15);
+    justify-self: center;
+
+    @include respond(sm) {
+      max-width: 100%;
+      width: 50rem;
+    }
   }
 
   &__details {
-    margin-left: 2.5rem;
+    @include respond(md) {
+      grid-column: span 2;
+    }
+    @include respond(sm) {
+      grid-column: span 1;
+    }
   }
 
   &__btn {
