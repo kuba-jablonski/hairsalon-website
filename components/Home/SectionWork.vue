@@ -5,65 +5,53 @@
         <h2>Our Work</h2>
         <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
+      <div class="grid-controls">
+        <button @click="filter('*')">
+          All
+        </button>
+        <button @click="filter('.haircuts')">
+          Haircuts
+        </button>
+        <button @click="filter('.dye')">
+          Dye
+        </button>
+        <button @click="filter('.shave')">
+          Shave
+        </button>
+        <button @click="filter('.hairstyle')">
+          Hairstyle
+        </button>
+      </div>
       <div class="image-grid">
-        <!-- <img
-          class="grid-item"
-          src="~/assets/images/5.jpg"
-        >
-        <div class="aspect">
-          <div class="aspect__inner">
-            <img
-              class="grid-item grid-item-2"
-              src="~/assets/images/1.jpg"
-            >
-          </div>
-        </div>
-        <div class="aspect">
-          <div class="aspect__inner">
-            <img
-              class="grid-item"
-              src="~/assets/images/7.jpg"
-            >
-          </div>
-        </div>
-        <img
-          class="grid-item"
-          src="~/assets/images/8.jpg"
-        >
-        <img
-          class="grid-item"
-          src="~/assets/images/9.jpg"
-        > -->
-
-        <div class="grid-item">
+        <div class="grid-item haircuts">
           <div class="aspect">
             <div class="aspect__inner">
               <img src="~/assets/images/5.jpg">
             </div>
           </div>
         </div>
-        <div class="grid-item grid-item-2">
+        <div class="grid-item dye grid-item-2">
           <div class="aspect">
             <div class="aspect__inner">
               <img src="~/assets/images/1.jpg">
             </div>
           </div>
         </div>
-        <div class="grid-item grid-item-3">
+        <div class="grid-item shave grid-item-3">
           <div class="aspect">
             <div class="aspect__inner">
               <img src="~/assets/images/7.jpg">
             </div>
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item hairstyle">
           <div class="aspect">
             <div class="aspect__inner">
               <img src="~/assets/images/8.jpg">
             </div>
           </div>
         </div>
-        <div class="grid-item">
+        <div class="grid-item dye">
           <div class="aspect">
             <div class="aspect__inner">
               <img src="~/assets/images/9.jpg">
@@ -72,43 +60,33 @@
         </div>
       </div>
       <div class="work__cta">
-        <base-button>View all work</base-button>
+        <base-button>
+          View all work
+        </base-button>
       </div>
     </section>
   </div>
 </template>
 
 <script>
+let iso
+
 export default {
   mounted() {
     if (process.browser) {
-      // const Masonry = require('masonry-layout')
-      // // eslint-disable-next-line no-console
-      // console.log(Masonry)
-
-      // const msnry = new Masonry('.image-grid', {
-      //   // options
-      //   itemSelector: '.grid-item',
-      //   percentPosition: true,
-      //   columnWidth: '.grid-sizer'
-      //   // gutter: 10
-      // })
-      // // eslint-disable-next-line no-console
-      // console.log(msnry)
-      const Shuffle = require('shufflejs').default
-
-      // Shuffle.options = {
-      //   gutterWidth: 10
-      // }
-
-      const element = document.querySelector('.image-grid')
-      // eslint-disable-next-line no-console
-      console.log(Shuffle)
-      const shuffleInstance = new Shuffle(element, {
+      const Isotope = require('isotope-layout')
+      const elem = document.querySelector('.image-grid')
+      iso = new Isotope(elem, {
         itemSelector: '.grid-item'
       })
       // eslint-disable-next-line no-console
-      console.log(shuffleInstance)
+    }
+  },
+  methods: {
+    filter(itemClass) {
+      iso.arrange({
+        filter: itemClass
+      })
     }
   }
 }
@@ -123,10 +101,18 @@ export default {
   @include respond(md) {
     width: 50%;
   }
+
+  @include respond(xs) {
+    width: 100%;
+  }
 }
 
 .grid-item-2 {
   width: 50%;
+
+  @include respond(xs) {
+    width: 100%;
+  }
 }
 
 .grid-item-3 {
