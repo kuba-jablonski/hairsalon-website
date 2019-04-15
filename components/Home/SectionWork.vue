@@ -161,7 +161,7 @@ export default {
 
 <style lang="scss" scoped>
 .image-grid {
-  margin-bottom: 4rem;
+  margin: 0 -1rem 4rem -1rem;
 }
 
 .overlay {
