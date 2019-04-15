@@ -45,6 +45,14 @@
       <div class="image-grid">
         <div class="grid-item haircuts">
           <div class="aspect">
+            <div class="overlay">
+              <h3 class="overlay__heading">
+                Hairstyle
+              </h3>
+              <p class="overlay__text">
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
             <div class="aspect__inner">
               <img src="~/assets/images/5.jpg">
             </div>
@@ -52,6 +60,14 @@
         </div>
         <div class="grid-item dye grid-item-2">
           <div class="aspect">
+            <div class="overlay">
+              <h3 class="overlay__heading">
+                Hairstyle
+              </h3>
+              <p class="overlay__text">
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
             <div class="aspect__inner">
               <img src="~/assets/images/1.jpg">
             </div>
@@ -59,6 +75,14 @@
         </div>
         <div class="grid-item shave grid-item-3">
           <div class="aspect">
+            <div class="overlay">
+              <h3 class="overlay__heading">
+                Hairstyle
+              </h3>
+              <p class="overlay__text">
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
             <div class="aspect__inner">
               <img src="~/assets/images/7.jpg">
             </div>
@@ -66,6 +90,14 @@
         </div>
         <div class="grid-item hairstyle">
           <div class="aspect">
+            <div class="overlay">
+              <h3 class="overlay__heading">
+                Hairstyle
+              </h3>
+              <p class="overlay__text">
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
             <div class="aspect__inner">
               <img src="~/assets/images/8.jpg">
             </div>
@@ -73,6 +105,14 @@
         </div>
         <div class="grid-item dye">
           <div class="aspect">
+            <div class="overlay">
+              <h3 class="overlay__heading">
+                Hairstyle
+              </h3>
+              <p class="overlay__text">
+                Lorem ipsum dolor sit amet.
+              </p>
+            </div>
             <div class="aspect__inner">
               <img src="~/assets/images/9.jpg">
             </div>
@@ -94,7 +134,7 @@ let iso
 export default {
   data() {
     return {
-      activeItem: null
+      activeItem: 'all'
     }
   },
   mounted() {
@@ -120,6 +160,32 @@ export default {
 
 
 <style lang="scss" scoped>
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+
+  &__heading {
+    color: $color-primary;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  &__text {
+    color: white;
+  }
+}
+
 .work {
   &__heading {
     text-align: center;
@@ -155,6 +221,14 @@ export default {
   width: 25%;
   padding: 1rem;
 
+  &:hover .overlay {
+    opacity: 1;
+  }
+
+  &:hover img {
+    transform: scale(1.2);
+  }
+
   @include respond(md) {
     width: 50%;
   }
@@ -181,6 +255,7 @@ export default {
 img {
   width: 100%;
   height: 100%;
+  transition: transform 0.2s;
 }
 
 .aspect {
