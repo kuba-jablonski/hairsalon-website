@@ -5,20 +5,40 @@
         <h2>Our Work</h2>
         <p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       </div>
-      <div class="grid-controls">
-        <button @click="filter('*')">
+      <div class="work__controls">
+        <button
+          class="work__control"
+          :class="{active: activeItem === 'all'}"
+          @click="filter({ name: 'all', selector: '*'})"
+        >
           All
         </button>
-        <button @click="filter('.haircuts')">
+        <button
+          class="work__control"
+          :class="{active: activeItem === 'haircuts'}"
+          @click="filter({ name: 'haircuts', selector: '.haircuts'})"
+        >
           Haircuts
         </button>
-        <button @click="filter('.dye')">
+        <button
+          class="work__control"
+          :class="{active: activeItem === 'dye'}"
+          @click="filter({ name: 'dye', selector: '.dye' })"
+        >
           Dye
         </button>
-        <button @click="filter('.shave')">
+        <button
+          class="work__control"
+          :class="{active: activeItem === 'shave'}"
+          @click="filter({ name: 'shave', selector: '.shave' })"
+        >
           Shave
         </button>
-        <button @click="filter('.hairstyle')">
+        <button
+          class="work__control"
+          :class="{active: activeItem === 'hairstyle'}"
+          @click="filter({ name: 'hairstyle', selector: '.hairstyle' })"
+        >
           Hairstyle
         </button>
       </div>
@@ -72,6 +92,11 @@
 let iso
 
 export default {
+  data() {
+    return {
+      activeItem: null
+    }
+  },
   mounted() {
     if (process.browser) {
       const Isotope = require('isotope-layout')
@@ -83,10 +108,11 @@ export default {
     }
   },
   methods: {
-    filter(itemClass) {
+    filter(target) {
       iso.arrange({
-        filter: itemClass
+        filter: target.selector
       })
+      this.activeItem = target.name
     }
   }
 }
@@ -94,6 +120,37 @@ export default {
 
 
 <style lang="scss" scoped>
+.work {
+  &__heading {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__control {
+    border: none;
+    outline: none;
+    font: inherit;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+}
+
+.active {
+  border-bottom: 2px solid $color-primary;
+  color: $color-primary;
+}
+
 .grid-item {
   width: 25%;
   padding: 1rem;
@@ -146,40 +203,4 @@ img {
 .aspect--16x9 {
   padding-bottom: 56.25%;
 }
-
-// .image-grid {
-//   display: grid;
-//   grid-template-columns: repeat(4, 1fr);
-//   grid-template-rows: repeat(2, 24rem);
-//   grid-gap: 4rem;
-//   margin-bottom: 8rem;
-// }
-
-// .grid-item {
-//   width: 100%;
-//   height: 100%;
-// }
-
-// .grid-item-1 {
-//   grid-column: span 1;
-//   grid-row: span 1;
-// }
-
-// .grid-item-2 {
-//   grid-column: span 2;
-//   grid-row: span 2;
-// }
-
-// .work {
-//   background: white;
-
-//   &__heading {
-//     text-align: center;
-//   }
-
-//   &__cta {
-//     display: flex;
-//     justify-content: center;
-//   }
-// }
 </style>
