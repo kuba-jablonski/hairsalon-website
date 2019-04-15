@@ -160,6 +160,10 @@ export default {
 
 
 <style lang="scss" scoped>
+.image-grid {
+  margin-bottom: 4rem;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -209,6 +213,11 @@ export default {
     &:not(:last-child) {
       margin-right: 3rem;
     }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
   }
 }
 
