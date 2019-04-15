@@ -34,6 +34,7 @@ export default {
   font-size: 1.5rem;
   border: 1px solid $color-font-dark;
   border-radius: 50px;
+  padding: 0 2rem;
   outline: none;
   background-color: transparent;
   text-transform: uppercase;
