@@ -16,9 +16,11 @@
     "cross-env": "^5.2.0",
     "isotope-layout": "^3.0.6",
     "masonry-layout": "^4.2.2",
-    "nuxt": "^2.4.0",
+    "nuxt": "^2.6.2",
     "nuxt-svg": "^0.1.4",
-    "shufflejs": "^5.2.1"
+    "portal-vue": "^2.1.0",
+    "shufflejs": "^5.2.1",
+    "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

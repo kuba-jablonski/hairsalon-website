@@ -52,6 +52,7 @@
               <p class="overlay__text">
                 Lorem ipsum dolor sit amet.
               </p>
+              <search-icon class="icon" />
             </div>
             <div class="aspect__inner">
               <img src="~/assets/images/5.jpg">
@@ -67,6 +68,7 @@
               <p class="overlay__text">
                 Lorem ipsum dolor sit amet.
               </p>
+              <search-icon class="icon" />
             </div>
             <div class="aspect__inner">
               <img src="~/assets/images/1.jpg">
@@ -82,6 +84,7 @@
               <p class="overlay__text">
                 Lorem ipsum dolor sit amet.
               </p>
+              <search-icon class="icon" />
             </div>
             <div class="aspect__inner">
               <img src="~/assets/images/7.jpg">
@@ -97,6 +100,7 @@
               <p class="overlay__text">
                 Lorem ipsum dolor sit amet.
               </p>
+              <search-icon class="icon" />
             </div>
             <div class="aspect__inner">
               <img src="~/assets/images/8.jpg">
@@ -112,6 +116,7 @@
               <p class="overlay__text">
                 Lorem ipsum dolor sit amet.
               </p>
+              <search-icon class="icon" />
             </div>
             <div class="aspect__inner">
               <img src="~/assets/images/9.jpg">
@@ -120,21 +125,33 @@
         </div>
       </div>
       <div class="work__cta">
-        <base-button>
+        <base-button @click="modalOpen = true">
           View all work
         </base-button>
       </div>
     </section>
+    <me-modal
+      :show="modalOpen"
+      @close="modalOpen = false"
+    />
   </div>
 </template>
 
 <script>
+import SearchIcon from '~/assets/images/search.svg?inline'
+import MeModal from '~/components/MeModal'
+
 let iso
 
 export default {
+  components: {
+    SearchIcon,
+    MeModal
+  },
   data() {
     return {
-      activeItem: 'all'
+      activeItem: 'all',
+      modalOpen: false
     }
   },
   mounted() {
@@ -160,6 +177,16 @@ export default {
 
 
 <style lang="scss" scoped>
+.icon {
+  height: 2rem;
+  width: 2rem;
+  fill: white;
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+}
+
 .image-grid {
   margin: 0 -1rem 4rem -1rem;
 }
