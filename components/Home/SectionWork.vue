@@ -199,6 +199,7 @@ export default {
   &__controls {
     display: flex;
     justify-content: center;
+    flex-flow: row wrap;
   }
 
   &__control {
@@ -212,6 +213,18 @@ export default {
 
     &:not(:last-child) {
       margin-right: 3rem;
+
+      @include respond(sm) {
+        margin-right: 2rem;
+      }
+    }
+
+    @include respond(sm) {
+      font-size: 1.4rem;
+    }
+
+    @include respond(xs) {
+      font-size: 1.2rem;
     }
   }
 
