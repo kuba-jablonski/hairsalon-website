@@ -41,34 +41,26 @@
 
 <script>
 import SearchIcon from '~/assets/images/search.svg?inline'
-import img1 from '~/assets/images/1.jpg'
-import img5 from '~/assets/images/5.jpg'
-import img7 from '~/assets/images/7.jpg'
-import img8 from '~/assets/images/8.jpg'
-import img9 from '~/assets/images/9.jpg'
+
 let iso
 
 export default {
   components: {
     SearchIcon
   },
+  props: {
+    controls: {
+      type: Array,
+      required: true
+    },
+    items: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
-      activeItem: 'All',
-      controls: [
-        { display: 'All', selector: '*' },
-        { display: 'Haircuts', selector: '.haircuts' },
-        { display: 'Dye', selector: '.dye' },
-        { display: 'Shave', selector: '.shave' },
-        { display: 'Hairstyle', selector: '.hairstyle' }
-      ],
-      items: [
-        { img: img5, classes: ['grid__item', 'haircuts'] },
-        { img: img1, classes: ['grid__item', 'grid__item--lgl', 'dye'] },
-        { img: img7, classes: ['grid__item', 'grid__item--lgs', 'shave'] },
-        { img: img8, classes: ['grid__item', 'hairstyle'] },
-        { img: img9, classes: ['grid__item', 'dye'] }
-      ]
+      activeItem: 'All'
     }
   },
   mounted() {
