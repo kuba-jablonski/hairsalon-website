@@ -5,7 +5,7 @@
         v-for="control in controls"
         :key="control.display"
         class="control__btn"
-        :class="{'control__btn--active': activeItem === control.display }"
+        :class="{'control__btn--active': activeCategory === control.display }"
         @click="filter(control)"
       >
         {{ control.display }}
@@ -13,9 +13,10 @@
     </div>
     <div class="grid">
       <div
-        v-for="item in items"
+        v-for="(item, index) in items"
         :key="item.img"
         :class="item.classes"
+        @click="openModal(index)"
       >
         <div class="aspect">
           <div class="overlay">
@@ -36,17 +37,26 @@
         </div>
       </div>
     </div>
+    <image-gallery-modal
+      :show="modalOpen"
+      :active-item-index="activeItemIndex"
+      :items="items"
+      @close="modalOpen = false"
+      @changeIndex="changeIndex($event)"
+    />
   </div>
 </template>
 
 <script>
 import SearchIcon from '~/assets/images/search.svg?inline'
+import ImageGalleryModal from '~/components/Shared/ImageGallery/ImageGalleryModal'
 
 let iso
 
 export default {
   components: {
-    SearchIcon
+    SearchIcon,
+    ImageGalleryModal
   },
   props: {
     controls: {
@@ -60,7 +70,9 @@ export default {
   },
   data() {
     return {
-      activeItem: 'All'
+      activeCategory: 'All',
+      activeItemIndex: 0,
+      modalOpen: false
     }
   },
   mounted() {
@@ -76,7 +88,20 @@ export default {
       iso.arrange({
         filter: target.selector
       })
-      this.activeItem = target.display
+      this.activeCategory = target.display
+    },
+    openModal(index) {
+      this.activeItemIndex = index
+      this.modalOpen = true
+    },
+    changeIndex(newIndex) {
+      if (newIndex > this.items.length - 1) {
+        newIndex = 0
+      }
+      if (newIndex < 0) {
+        newIndex = this.items.length - 1
+      }
+      this.activeItemIndex = newIndex
     }
   }
 }

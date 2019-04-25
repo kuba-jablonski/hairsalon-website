@@ -15,15 +15,10 @@
         </base-button>
       </div>
     </section>
-    <me-modal
-      :show="modalOpen"
-      @close="modalOpen = false"
-    />
   </div>
 </template>
 
 <script>
-import MeModal from '~/components/MeModal'
 import ImageGallery from '~/components/Shared/ImageGallery/ImageGallery'
 import img1 from '~/assets/images/1.jpg'
 import img5 from '~/assets/images/5.jpg'
@@ -33,12 +28,10 @@ import img9 from '~/assets/images/9.jpg'
 
 export default {
   components: {
-    MeModal,
     ImageGallery
   },
   data() {
     return {
-      modalOpen: false,
       controls: [
         { display: 'All', selector: '*' },
         { display: 'Haircuts', selector: '.haircuts' },
