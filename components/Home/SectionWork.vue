@@ -20,7 +20,7 @@
 
 <script>
 import ImageGallery from '~/components/Shared/ImageGallery/ImageGallery'
-import img1 from '~/assets/images/1.jpg'
+import img6 from '~/assets/images/6.jpg'
 import img5 from '~/assets/images/5.jpg'
 import img7 from '~/assets/images/7.jpg'
 import img8 from '~/assets/images/8.jpg'
@@ -41,7 +41,7 @@ export default {
       ],
       items: [
         { img: img5, classes: ['grid__item', 'haircuts'] },
-        { img: img1, classes: ['grid__item', 'grid__item--lgl', 'dye'] },
+        { img: img6, classes: ['grid__item', 'grid__item--lgl', 'dye'] },
         { img: img7, classes: ['grid__item', 'grid__item--lgs', 'shave'] },
         { img: img8, classes: ['grid__item', 'hairstyle'] },
         { img: img9, classes: ['grid__item', 'dye'] }

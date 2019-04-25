@@ -80,6 +80,7 @@ export default {
 .img {
   max-width: 99%;
   max-height: 99%;
+  width: 60rem;
 }
 
 .btn {
