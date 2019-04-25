@@ -10,7 +10,7 @@
     >
       <icon-left class="icon" />
     </button>
-    <img class="img" :src="items[activeItemIndex].img" @click.stop>
+    <img class="modal__img" :src="items[activeItemIndex].img" @click.stop>
     <button
       class="btn btn--right"
       @click.stop="forward"
@@ -77,12 +77,6 @@ export default {
 
 
 <style lang="scss" scoped>
-.img {
-  max-width: 99%;
-  max-height: 99%;
-  width: 60rem;
-}
-
 .btn {
   background-color: $color-primary;
   opacity: 0.8;
@@ -155,5 +149,11 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &__img {
+    max-width: 99%;
+    max-height: 99%;
+    width: 60rem;
+  }
 }
 </style>
