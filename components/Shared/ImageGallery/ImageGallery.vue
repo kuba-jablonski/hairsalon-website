@@ -16,7 +16,6 @@
         v-for="(item, index) in items"
         :key="item.img"
         :class="item.classes"
-        @click="openModal(index)"
       >
         <div class="aspect">
           <div class="overlay">
@@ -26,7 +25,9 @@
             <p class="overlay__text">
               Lorem ipsum dolor sit amet.
             </p>
-            <search-icon class="overlay__icon" />
+            <div @click="openModal(index)">
+              <search-icon class="overlay__icon" />
+            </div>
           </div>
           <div class="aspect__inner">
             <img
@@ -210,13 +211,19 @@ export default {
   }
 
   &__icon {
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
     fill: white;
     position: absolute;
     left: 50%;
     bottom: 2rem;
     transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      fill: $color-primary;
+    }
   }
 }
 
