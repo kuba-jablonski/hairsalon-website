@@ -39,8 +39,14 @@ export default {
   },
   props: {
     show: Boolean,
-    activeItemIndex: Number,
-    items: Array
+    activeItemIndex: {
+      type: Number,
+      required: true
+    },
+    items: {
+      type: Array,
+      required: true
+    }
   },
   watch: {
     show(show) {

@@ -198,7 +198,7 @@ export default {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.5s;
 
   &__heading {
     color: $color-primary;
@@ -230,7 +230,7 @@ export default {
 .img {
   width: 100%;
   height: 100%;
-  transition: transform 0.2s;
+  transition: transform 0.4s;
 }
 
 .aspect {
