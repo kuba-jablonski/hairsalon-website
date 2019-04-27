@@ -37,9 +37,6 @@
   position: relative;
   z-index: 1;
 
-  &__content {
-  }
-
   &__text {
     margin-bottom: 4rem;
   }
