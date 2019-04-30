@@ -1,18 +1,18 @@
 <template>
   <div>
-    <layout-header />
+    <layout-nav />
     <nuxt />
     <layout-footer />
   </div>
 </template>
 
 <script>
-import LayoutHeader from '~/components/Layout/LayoutHeader'
+import LayoutNav from '~/components/Layout/LayoutNav/LayoutNav'
 import LayoutFooter from '~/components/Layout/LayoutFooter'
 
 export default {
   components: {
-    LayoutHeader,
+    LayoutNav,
     LayoutFooter
   }
 }

@@ -143,6 +143,7 @@ export default {
 
 .thumbnail {
   background-image: url('~assets/images/14.png');
+  background-repeat: no-repeat;
   position: absolute;
   width: 55.5rem;
   height: 70%;
@@ -194,6 +195,10 @@ export default {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 3rem;
 
+    @include respond(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
     img {
       width: 100%;
       filter: grayscale(1);
@@ -208,10 +213,15 @@ export default {
 
   &__card {
     border: 1px solid #e5e5e5;
+    background-color: white;
 
     &:hover {
       img {
         filter: none;
+      }
+
+      .personnel__card-text h4 {
+        color: $color-primary;
       }
 
       .personnel__overlay {
