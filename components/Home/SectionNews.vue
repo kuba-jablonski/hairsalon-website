@@ -83,12 +83,32 @@ export default {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 3rem;
+
+    @include respond(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__card {
+    cursor: pointer;
+
     img {
       width: 100%;
       margin-bottom: 1rem;
+    }
+
+    h4 {
+      transition: all 0.3s;
+    }
+
+    :hover {
+      h4 {
+        color: $color-primary;
+      }
     }
   }
 

@@ -29,7 +29,15 @@
   right: 0;
   height: 100%;
   z-index: -1;
-  opacity: 0.5;
+
+  @include respond(md) {
+    width: 80%;
+    opacity: 0.2;
+  }
+
+  @include respond(sm) {
+    width: 100%;
+  }
 }
 
 .booking {
@@ -46,10 +54,6 @@
     button:not(:last-child) {
       margin-right: 2rem;
     }
-  }
-
-  img {
-    width: 100%;
   }
 }
 </style>
