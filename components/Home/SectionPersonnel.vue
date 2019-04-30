@@ -150,6 +150,14 @@ export default {
   top: 0;
   right: 50%;
   z-index: -1;
+
+  @include respond(md) {
+    opacity: 0.2;
+  }
+
+  @include respond(sm) {
+    display: none;
+  }
 }
 
 .personnel {
@@ -177,6 +185,10 @@ export default {
     grid-column: 2;
     z-index: 1;
 
+    @include respond(md) {
+      grid-column: 1/3;
+    }
+
     p {
       margin-bottom: 4rem;
     }
@@ -195,10 +207,6 @@ export default {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 3rem;
 
-    @include respond(md) {
-      grid-template-columns: 1fr 1fr;
-    }
-
     img {
       width: 100%;
       filter: grayscale(1);
@@ -214,6 +222,14 @@ export default {
   &__card {
     border: 1px solid #e5e5e5;
     background-color: white;
+
+    @include respond(md) {
+      grid-column: span 2;
+    }
+
+    @include respond(xs) {
+      grid-column: span 4;
+    }
 
     &:hover {
       img {
