@@ -62,6 +62,10 @@ export default {
   grid-gap: 3rem;
   grid-template-columns: 4fr 3fr 3fr;
 
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
+
   &__opening p:last-of-type {
     margin-bottom: 2rem;
   }
