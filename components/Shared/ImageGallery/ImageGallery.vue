@@ -11,13 +11,16 @@
         {{ control.display }}
       </button>
     </div>
-    <div class="grid">
+    <div
+      ref="grid"
+      class="grid"
+    >
       <div
         v-for="(item, index) in items"
         :key="item.img"
         :class="item.classes"
       >
-        <div class="aspect">
+        <div :class="{'aspect': true, 'aspect__active': square}">
           <div class="overlay">
             <h3 class="overlay__heading">
               Hairstyle
@@ -29,7 +32,7 @@
               <search-icon class="overlay__icon" />
             </div>
           </div>
-          <div class="aspect__inner">
+          <div :class="{'aspect__inner': square}">
             <img
               class="img"
               :src="item.img"
@@ -49,10 +52,9 @@
 </template>
 
 <script>
+import imagesLoaded from 'imagesloaded'
 import SearchIcon from '~/assets/images/search.svg?inline'
 import ImageGalleryModal from '~/components/Shared/ImageGallery/ImageGalleryModal'
-
-let iso
 
 export default {
   components: {
@@ -67,6 +69,10 @@ export default {
     items: {
       type: Array,
       required: true
+    },
+    square: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -79,14 +85,20 @@ export default {
   mounted() {
     if (process.browser) {
       const Isotope = require('isotope-layout')
-      iso = new Isotope('.grid', {
+      const grid = this.$refs.grid
+
+      this.iso = new Isotope(grid, {
         itemSelector: '.grid__item'
+      })
+
+      imagesLoaded(grid).on('progress', () => {
+        this.iso.layout()
       })
     }
   },
   methods: {
     filter(target) {
-      iso.arrange({
+      this.iso.arrange({
         filter: target.selector
       })
       this.activeCategory = target.display
@@ -150,7 +162,6 @@ export default {
   margin: 0 -1rem 4rem -1rem;
 
   &__item {
-    width: 25%;
     padding: 1rem;
 
     &:hover .overlay {
@@ -159,6 +170,14 @@ export default {
 
     &:hover img {
       transform: scale(1.2);
+    }
+
+    &--x4 {
+      width: 25%;
+    }
+
+    &--x3 {
+      width: 33%;
     }
 
     @include respond(md) {
@@ -236,9 +255,12 @@ export default {
 .aspect {
   position: relative;
   width: 100%;
-  height: 0;
-  padding-bottom: 100%;
   overflow: hidden;
+
+  &__active {
+    height: 0;
+    padding-bottom: 100%;
+  }
 
   &__inner {
     position: absolute;
