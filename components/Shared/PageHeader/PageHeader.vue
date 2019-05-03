@@ -1,14 +1,19 @@
 <template>
   <header class="header">
-    <h1>Portfolio</h1>
-    <p class="p">
+    <h1>
+      <slot />
+    </h1>
+    <p class="header__pagination">
       <nuxt-link
         to="/"
-        class="home"
+        class="header__home"
       >
         <icon-home class="icon" />Home
       </nuxt-link>
-      <icon-double-right class="icon" /> <span>Portfolio</span>
+      <icon-double-right class="icon" />
+      <span>
+        <slot />
+      </span>
     </p>
   </header>
 </template>
@@ -26,35 +31,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.p {
-  display: flex;
-  align-items: center;
-
-  :not(:last-child) {
-    margin-right: 1rem;
-  }
-}
-
-.home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #252525;
-  transition: all 0.3s;
-
-  .icon {
-    margin-right: 2px;
-  }
-
-  &:hover {
-    color: $color-primary;
-
-    .icon {
-      fill: $color-primary;
-    }
-  }
-}
-
 .icon {
   width: 1.6rem;
   height: 1.6rem;
@@ -67,5 +43,34 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+
+    :not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #252525;
+    transition: all 0.3s;
+
+    .icon {
+      margin-right: 2px;
+    }
+
+    &:hover {
+      color: $color-primary;
+
+      .icon {
+        fill: $color-primary;
+      }
+    }
+  }
 }
 </style>

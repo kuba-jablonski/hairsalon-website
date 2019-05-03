@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <page-header />
+    <page-header>Portfolio</page-header>
     <image-gallery
       :controls="controls"
       :items="items"
