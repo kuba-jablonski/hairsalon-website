@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <page-header />
     <image-gallery
       :controls="controls"
       :items="items"
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import PageHeader from '~/components/Shared/PageHeader/PageHeader'
 import ImageGallery from '~/components/Shared/ImageGallery/ImageGallery'
 import img4 from '~/assets/images/4.jpg'
 import img6 from '~/assets/images/6.jpg'
@@ -24,6 +26,7 @@ import img29 from '~/assets/images/29.jpg'
 
 export default {
   components: {
+    PageHeader,
     ImageGallery
   },
   data() {
