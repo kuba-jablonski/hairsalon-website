@@ -141,6 +141,14 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
 
+  &:first-of-type {
+    border-top: 1px solid #e5e5e5;
+  }
+
+  &:last-of-type {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
   &__card {
     height: 50rem;
     display: flex;
