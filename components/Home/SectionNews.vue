@@ -27,7 +27,7 @@
 import img1 from '~/assets/images/1.jpg'
 import img2 from '~/assets/images/2.jpg'
 import img3 from '~/assets/images/3.jpg'
-import NewsCard from '~/components/shared/NewsCard/NewsCard'
+import NewsCard from '~/components/Shared/NewsCard/NewsCard'
 
 export default {
   components: {
