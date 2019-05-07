@@ -6,67 +6,64 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, facere?</p>
       </div>
       <div class="news__cards">
-        <div class="news__card">
-          <img src="~/assets/images/1.jpg">
-          <div class="news__info">
-            <div class="news__date">
-              <icon-clock class="icon" /> September 27
-            </div>
-            <span>|</span>
-            <div class="news__comments">
-              <icon-chat class="icon" /> 10
-            </div>
-          </div>
-          <div class="news__cardtext">
-            <h4>Nina Dobrev Got a Major and Doesn't Look like Nina Dobrev.</h4>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit veritatis rem enim fugiat voluptas magni quaerat inventore ut illum molestias.</p>
-          </div>
-        </div>
-        <div class="news__card">
-          <img src="~/assets/images/2.jpg">
-          <div class="news__info">
-            <div class="news__date">
-              <icon-clock class="icon" /> September 27
-            </div>
-            <span>|</span>
-            <div class="news__comments">
-              <icon-chat class="icon" /> 10
-            </div>
-          </div>
-          <div class="news__cardtext">
-            <h4>Nina Dobrev Got a Major and Doesn't Look like Nina Dobrev.</h4>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit veritatis rem enim fugiat voluptas magni quaerat inventore ut illum molestias.</p>
-          </div>
-        </div>
-        <div class="news__card">
-          <img src="~/assets/images/3.jpg">
-          <div class="news__info">
-            <div class="news__date">
-              <icon-clock class="icon" /> September 27
-            </div>
-            <span>|</span>
-            <div class="news__comments">
-              <icon-chat class="icon" /> 10
-            </div>
-          </div>
-          <div class="news__cardtext">
-            <h4>Nina Dobrev Got a Major and Doesn't Look like Nina Dobrev.</h4>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit veritatis rem enim fugiat voluptas magni quaerat inventore ut illum molestias.</p>
-          </div>
-        </div>
+        <news-card
+          v-for="card in cards"
+          :key="card.img"
+          :img="card.img"
+          :comments="card.comments"
+          :date="card.date"
+        >
+          <template slot="heading">
+            Nina Dobrev Got a Major and Doesn't Look like Nina Dobrev.
+          </template>
+          <template>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit veritatis rem enim fugiat voluptas magni quaerat inventore ut illum molestias.</template>
+        </news-card>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import IconClock from '~/assets/images/clock.svg?inline'
-import IconChat from '~/assets/images/bubbles4.svg?inline'
+import img1 from '~/assets/images/1.jpg'
+import img2 from '~/assets/images/2.jpg'
+import img3 from '~/assets/images/3.jpg'
+import NewsCard from '~/components/shared/NewsCard/NewsCard'
 
 export default {
   components: {
-    IconClock,
-    IconChat
+    NewsCard
+  },
+  data() {
+    return {
+      cards: [
+        {
+          img: img1,
+          date: 'September 27',
+          comments: 10,
+          heading: "Nina Dobrev Got a Major and Doesn't Look like Nina Dobrev.",
+          text:
+            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit veritatis rem enim fugiat voluptas magni quaerat inventore ut illum molestias.'
+        },
+        {
+          img: img2,
+          date: 'September 27',
+          comments: 10,
+          heading:
+            'Finally: How to Make Your Agressively Straight Hair Hold a Curl',
+          text:
+            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit veritatis rem enim fugiat voluptas magni quaerat inventore ut illum molestias.'
+        },
+        {
+          img: img3,
+          date: 'September 27',
+          comments: 10,
+          heading:
+            'Yes, Emilia Clarke Just Cut Off All Her Hair Into a Tiny Bob',
+          text:
+            'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit veritatis rem enim fugiat voluptas magni quaerat inventore ut illum molestias.'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -92,48 +89,5 @@ export default {
       grid-template-columns: 1fr;
     }
   }
-
-  &__card {
-    cursor: pointer;
-
-    img {
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-
-    h4 {
-      transition: all 0.3s;
-    }
-
-    :hover {
-      h4 {
-        color: $color-primary;
-      }
-    }
-  }
-
-  &__info {
-    font-size: 1.4rem;
-    color: #acacac;
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-
-    & > * {
-      display: flex;
-      align-items: center;
-    }
-
-    & > *:not(:last-child) {
-      margin-right: 2rem;
-    }
-  }
-}
-
-.icon {
-  width: 1.4rem;
-  height: 1.4rem;
-  fill: #acacac;
-  margin-right: 4px;
 }
 </style>
