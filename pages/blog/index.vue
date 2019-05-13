@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <div class="blog">
-      <page-header>Blog</page-header>
+      <page-header>
+        Our Blog
+        <template v-slot:link>
+          Blog
+        </template>
+      </page-header>
       <div
         ref="grid"
         class="grid"
@@ -35,7 +40,7 @@
 import imagesLoaded from 'imagesloaded'
 import PageHeader from '~/components/Shared/PageHeader/PageHeader'
 import NewsCard from '~/components/Shared/NewsCard/NewsCard'
-import img1 from '~/assets/images/1.jpg'
+import img6 from '~/assets/images/6.jpg'
 import img2 from '~/assets/images/2.jpg'
 import img3 from '~/assets/images/3.jpg'
 import img4 from '~/assets/images/4.jpg'
@@ -54,7 +59,7 @@ export default {
     return {
       cards: [
         {
-          img: img1,
+          img: img6,
           date: 'September 27',
           comments: 10,
           heading: "Nina Dobrev Got a Major and Doesn't Look like Nina Dobrev.",

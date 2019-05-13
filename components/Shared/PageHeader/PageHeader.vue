@@ -12,7 +12,7 @@
       </nuxt-link>
       <icon-double-right class="icon" />
       <span>
-        <slot />
+        <slot name="link" />
       </span>
     </p>
   </header>

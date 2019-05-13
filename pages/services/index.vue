@@ -1,6 +1,11 @@
 <template>
   <div>
-    <page-header>Services</page-header>
+    <page-header>
+      Our Services
+      <template v-slot:link>
+        Services
+      </template>
+    </page-header>
     <div class="service">
       <div class="service__card">
         <div class="service__details">

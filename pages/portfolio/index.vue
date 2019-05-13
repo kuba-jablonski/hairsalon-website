@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <page-header>Portfolio</page-header>
+    <page-header>
+      Portfolio
+      <template v-slot:link>
+        Portfolio
+      </template>
+    </page-header>
     <image-gallery
       :controls="controls"
       :items="items"
