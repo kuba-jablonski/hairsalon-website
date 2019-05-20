@@ -79,20 +79,34 @@
         </div>
       </div>
     </div>
+    <div class="container">
+      <div class="carousel-section">
+        <testimonial-carousel />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import PageHeader from '~/components/Shared/PageHeader/PageHeader'
+import TestimonialCarousel from '~/components/About/TestimonialCarousel'
 
 export default {
   components: {
-    PageHeader
+    PageHeader,
+    TestimonialCarousel
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.carousel-section {
+  padding: 8rem 0;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e6e6e6;
+}
+
 .display {
   position: relative;
 
