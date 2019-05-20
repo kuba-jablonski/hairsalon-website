@@ -366,7 +366,6 @@ export default {
   padding: 8rem 0;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #e6e6e6;
 }
 
 .display {
