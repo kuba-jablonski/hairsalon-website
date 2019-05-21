@@ -121,6 +121,7 @@ export default {
     top: 0;
     left: 50%;
     transform: translate(-50%, -10%);
+    font-family: $font-display;
   }
 
   &__quote {

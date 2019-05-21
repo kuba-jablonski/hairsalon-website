@@ -32,6 +32,10 @@ h1 {
 h2 {
   font-size: 3.6rem;
   line-height: 1.2;
+
+  @include respond(sm) {
+    font-size: 3rem;
+  }
 }
 
 h3 {

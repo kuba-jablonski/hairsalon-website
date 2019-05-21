@@ -28,7 +28,7 @@
             src="~/assets/images/44.jpg"
           >
           <button class="video__btn">
-            Play
+            <play-icon class="video__btn-icon" />
           </button>
         </div>
         <div class="data">
@@ -202,6 +202,7 @@
 <script>
 import PageHeader from '~/components/Shared/PageHeader/PageHeader'
 import TestimonialCarousel from '~/components/About/TestimonialCarousel'
+import PlayIcon from '~/assets/images/play.svg?inline'
 import FacebookIcon from '~/assets/images/facebook.svg?inline'
 import TwitterIcon from '~/assets/images/twitter.svg?inline'
 import LinkedinIcon from '~/assets/images/linkedin.svg?inline'
@@ -211,6 +212,7 @@ export default {
   components: {
     PageHeader,
     TestimonialCarousel,
+    PlayIcon,
     FacebookIcon,
     TwitterIcon,
     LinkedinIcon,
@@ -384,10 +386,11 @@ export default {
 
   &__number {
     position: absolute;
-    top: 40%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 5.1rem;
+    font-size: 6.5rem;
+    font-family: $font-display;
   }
 
   &__name {
@@ -407,9 +410,14 @@ export default {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 3rem;
+  grid-column-gap: 3rem;
+  grid-row-gap: 5rem;
   padding-bottom: 8rem;
   z-index: 1;
+
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .video {
@@ -450,18 +458,51 @@ export default {
     border: none;
     outline: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $color-font-dark;
+    }
+
+    @include respond(md) {
+      width: 7rem;
+      height: 7rem;
+    }
+
+    @include respond(sm) {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
+  &__btn-icon {
+    fill: white;
+    width: 3rem;
+    height: 3rem;
+
+    @include respond(sm) {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 }
 
 .about {
   display: grid;
   grid-template-columns: 3fr 4fr;
-  grid-gap: 8rem;
+  grid-gap: 5rem;
   align-items: start;
   padding-bottom: 8rem;
 
   &__title {
     position: relative;
+
+    @include respond(md) {
+      grid-column: 1/-1;
+    }
 
     p {
       position: absolute;
@@ -487,12 +528,24 @@ export default {
     color: rgba($color-primary, 0.1);
     display: flex;
     justify-content: flex-end;
+
+    @include respond(md) {
+      font-size: 8rem;
+    }
+
+    @include respond(sm) {
+      font-size: 7rem;
+    }
   }
 
   &__text {
     color: $color-font-dark;
     font-style: italic;
     font-size: 2rem;
+
+    @include respond(md) {
+      grid-column: 1/-1;
+    }
   }
 }
 </style>
