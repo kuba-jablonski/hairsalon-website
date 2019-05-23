@@ -9,24 +9,24 @@
     <div class="container">
       <div class="info">
         <div class="info__item">
-          <facebook-icon class="info__icon" />
+          <phone-icon class="info__icon" />
           <h4>Phone</h4>
           <p>+01-0000-0000</p>
         </div>
         <div class="info__item">
-          <facebook-icon class="info__icon" />
+          <map-marker-icon class="info__icon" />
           <h4>Address</h4>
           <p>234 Fake Street, NY</p>
         </div>
         <div class="info__item">
-          <facebook-icon class="info__icon" />
+          <clock-icon class="info__icon" />
           <h4>
             Open Time
           </h4>
           <p>10:00 am to 11:00 pm</p>
         </div>
         <div class="info__item">
-          <facebook-icon class="info__icon" />
+          <email-icon class="info__icon" />
           <h4>Email</h4>
           <p>test@dummy.com</p>
         </div>
@@ -68,12 +68,18 @@
 
 <script>
 import PageHeader from '~/components/Shared/PageHeader/PageHeader'
-import FacebookIcon from '~/assets/images/facebook.svg?inline'
+import PhoneIcon from '~/assets/images/phone.svg?inline'
+import MapMarkerIcon from '~/assets/images/map-marker.svg?inline'
+import ClockIcon from '~/assets/images/clock2.svg?inline'
+import EmailIcon from '~/assets/images/envelope.svg?inline'
 
 export default {
   components: {
     PageHeader,
-    FacebookIcon
+    PhoneIcon,
+    MapMarkerIcon,
+    ClockIcon,
+    EmailIcon
   }
 }
 </script>
