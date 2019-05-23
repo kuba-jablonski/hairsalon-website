@@ -1,40 +1,42 @@
 <template>
-  <div class="container">
-    <nav class="nav">
-      <img
-        class="nav__logo"
-        src="~/assets/images/logo.png"
-        alt="Akame"
-      >
-      <ul class="nav__items">
-        <li
-          v-for="item in items"
-          :key="item.link"
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__content">
+        <img
+          class="nav__logo"
+          src="~/assets/images/logo.png"
+          alt="Akame"
         >
-          <nuxt-link
-            :to="item.link"
-            class="nav__item"
+        <ul class="nav__items">
+          <li
+            v-for="item in items"
+            :key="item.link"
           >
-            {{ item.display }}
-          </nuxt-link>
-        </li>
-      </ul>
-      <button
-        class="menu-btn"
-        @click="navOpen = !navOpen"
-      >
-        <icon-menu class="menu-btn__icon" />
-      </button>
-      <base-button class="nav__cta">
-        Book Now
-      </base-button>
-      <layout-nav-mobile
-        :show="navOpen"
-        :items="items"
-        @close="navOpen = false"
-      />
-    </nav>
-  </div>
+            <nuxt-link
+              :to="item.link"
+              class="nav__item"
+            >
+              {{ item.display }}
+            </nuxt-link>
+          </li>
+        </ul>
+        <button
+          class="menu-btn"
+          @click="navOpen = !navOpen"
+        >
+          <icon-menu class="menu-btn__icon" />
+        </button>
+        <base-button class="nav__cta">
+          Book Now
+        </base-button>
+        <layout-nav-mobile
+          :show="navOpen"
+          :items="items"
+          @close="navOpen = false"
+        />
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -86,12 +88,16 @@ export default {
 
 .nav {
   background-color: #fff;
-  display: flex;
-  height: 10rem;
-  align-items: center;
+  border-bottom: 1px solid $color-grey-light-1;
 
-  @include respond(md) {
-    height: 6rem;
+  &__content {
+    display: flex;
+    align-items: center;
+    height: 10rem;
+
+    @include respond(md) {
+      height: 6rem;
+    }
   }
 
   &__logo {
