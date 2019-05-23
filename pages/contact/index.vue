@@ -91,6 +91,14 @@ export default {
   grid-gap: 4rem;
   padding-bottom: 8rem;
 
+  @include respond(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(xs) {
+    grid-template-columns: 1fr;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -109,6 +117,10 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;
+
+  @include respond(sm) {
+    grid-template-columns: 1fr;
+  }
 
   &__bg {
     padding: 8rem 0;
