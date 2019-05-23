@@ -17,11 +17,8 @@
     "imagesloaded": "^4.1.4",
     "isotope-layout": "^3.0.6",
     "jarallax": "^1.10.7",
-    "masonry-layout": "^4.2.2",
     "nuxt": "^2.6.2",
     "nuxt-svg": "^0.1.4",
-    "portal-vue": "^2.1.0",
-    "shufflejs": "^5.2.1",
     "vue-template-compiler": "^2.6.10"
   },
   "devDependencies": {
