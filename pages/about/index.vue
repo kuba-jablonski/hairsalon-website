@@ -27,9 +27,24 @@
             class="video__img"
             src="~/assets/images/44.jpg"
           >
-          <button class="video__btn">
+          <button
+            class="video__btn"
+            @click="modalOpen = true"
+          >
             <play-icon class="video__btn-icon" />
           </button>
+          <base-modal
+            :show="modalOpen"
+            @close="modalOpen = false"
+          >
+            <div class="video__container">
+              <iframe
+                src="https://www.youtube.com/embed/Ldd8yjjo6jA"
+                frameborder="0"
+                allowfullscreen
+              />
+            </div>
+          </base-modal>
         </div>
         <div class="data">
           <div class="display">
@@ -217,6 +232,11 @@ export default {
     TwitterIcon,
     LinkedinIcon,
     DribbbleIcon
+  },
+  data() {
+    return {
+      modalOpen: false
+    }
   }
 }
 </script>
@@ -431,6 +451,29 @@ export default {
     height: 60%;
     background-color: #f6f9f9;
     width: 100%;
+  }
+
+  &__container {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    padding-bottom: 45%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  &__container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
   }
 
   &__card {
