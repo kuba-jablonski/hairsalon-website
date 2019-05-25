@@ -61,6 +61,14 @@
       br {
         display: none;
       }
+
+      @include respond(sm) {
+        font-size: 5rem;
+
+        br {
+          display: none;
+        }
+      }
     }
   }
 
