@@ -19,7 +19,8 @@
     "jarallax": "^1.10.7",
     "nuxt": "^2.6.2",
     "nuxt-svg": "^0.1.4",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "vue2-smooth-scroll": "^1.0.5"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

@@ -36,7 +36,10 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{ src: '~/plugins/global-component-loader.js' }],
+  plugins: [
+    '~/plugins/global-component-loader.js',
+    { src: '~/plugins/vue-smooth-scroll', mode: 'client' }
+  ],
 
   /*
   ** Nuxt.js modules
