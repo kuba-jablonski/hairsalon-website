@@ -41,6 +41,11 @@ export default {
       type: Array,
       required: true
     }
+  },
+  watch: {
+    '$route.name'() {
+      this.$emit('close')
+    }
   }
 }
 </script>
