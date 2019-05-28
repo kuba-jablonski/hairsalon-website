@@ -158,11 +158,15 @@ export default {
     height: 50rem;
     display: flex;
     align-items: center;
+
+    @include respond(md) {
+      grid-column: span 2;
+    }
   }
 
   &__details {
-    width: 57rem;
-    margin-left: auto;
+    width: 100%;
+
     padding-left: 2rem;
 
     h2 {
@@ -178,7 +182,6 @@ export default {
 
     @media screen and (max-width: 1160px) {
       margin-left: 0;
-      width: auto;
     }
   }
 
@@ -191,6 +194,10 @@ export default {
 .jarallax {
   position: relative;
   z-index: 0;
+
+  @include respond(md) {
+    display: none;
+  }
 }
 .jarallax > .jarallax-img {
   position: absolute;
