@@ -17,7 +17,7 @@
     "imagesloaded": "^4.1.4",
     "isotope-layout": "^3.0.6",
     "jarallax": "^1.10.7",
-    "nuxt": "^2.6.2",
+    "nuxt": "^2.15.8",
     "nuxt-svg": "^0.1.4",
     "vue-template-compiler": "^2.6.10",
     "vue2-smooth-scroll": "^1.0.5"
